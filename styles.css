@@ -37,8 +37,14 @@ th, td {
   border: 1px solid #ddd;
 }
 
+/* Aumentar el tamaño de la columna de imágenes */
+th.fixed-width, td.fixed-width {
+  width: 25%; /* Aumenta el ancho de la columna de imágenes */
+}
+
+/* Ajuste de las imágenes */
 td img {
-  max-width: 50%; /* Las imágenes ocupan la mitad del ancho por defecto */
+  max-width: 100%; /* Ahora las imágenes ocupan el 100% del ancho disponible en la columna */
   height: auto;
   display: block;
   margin: auto;
@@ -47,17 +53,17 @@ td img {
 
 /* Sobrescribir el estilo de las filas impares de Bootstrap */
 table.table-striped tbody tr:nth-child(odd) {
-  background-color: #fff !important; /* Asegura que las filas impares tengan fondo blanco */
+  background-color: #fff !important;
 }
 
 tbody tr {
-  background-color: #fff !important; /* Fondo blanco asegurado */
+  background-color: #fff !important;
 }
 
 /* Estilo del carrusel */
 .carousel-inner {
   width: 100%;
-  height: auto; /* Ajusta la altura de la fila según tus necesidades */
+  height: auto;
   overflow: hidden;
   position: relative;
 }
@@ -92,7 +98,6 @@ tbody tr {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* Hover effect for carousel controls */
 .carousel-control-prev:hover, .carousel-control-next:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -100,40 +105,41 @@ tbody tr {
 /* Media Queries for mobile devices */
 @media (max-width: 768px) {
   body {
-    padding: 0 1rem; /* Menor margen en dispositivos móviles */
+    padding: 0 1rem;
   }
 
-  /* Ajuste para las imágenes en la tabla */
+  /* Ajustar tamaño de la tabla para pantallas pequeñas */
+  table {
+    font-size: 1rem;
+  }
+
+  /* Ajustar la columna de imágenes para pantallas móviles */
+  th.fixed-width, td.fixed-width {
+    width: 40%; /* Aumenta el tamaño de la columna de imágenes en dispositivos móviles */
+  }
+
   td img {
-    max-width: 80%; /* Aumentamos el tamaño de las imágenes en dispositivos móviles */
+    max-width: 100%; /* Las imágenes ocupan el 100% del ancho disponible en pantallas móviles */
     height: auto;
   }
 
-  /* Ajuste de texto y tamaños de tabla en dispositivos móviles */
-  table {
-    font-size: 1rem; /* Reduce el tamaño del texto para que se ajuste mejor en pantallas pequeñas */
-  }
-
-  /* Header ajustado para pantallas pequeñas */
   header {
-    font-size: 1.2rem; /* Fuente más pequeña en móviles */
+    font-size: 1.2rem;
     padding: 0.5rem;
   }
 
-  /* Estilo específico para el carrusel en dispositivos móviles */
   .carousel-inner {
     width: 100%;
-    height: 500px; /* Imágenes más grandes en dispositivos móviles */
+    height: 500px;
   }
 
   .carousel-item img {
-    width: 100%; /* Las imágenes del carrusel ocupan todo el ancho */
-    height: auto; /* Mantiene la proporción */
+    width: 100%;
+    height: auto;
   }
 
-  /* Para mejorar la visibilidad de las flechas de navegación en móviles */
   .carousel-control-prev, .carousel-control-next {
-    font-size: 1.5rem; /* Aumenta el tamaño de las flechas */
+    font-size: 1.5rem;
     width: 40px;
     height: 40px;
   }
