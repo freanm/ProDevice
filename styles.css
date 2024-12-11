@@ -37,7 +37,7 @@ th, td {
 }
 
 td img {
-  max-width: 350px;
+  max-width: 50%; /* Ahora las imágenes ocuparán el ancho disponible */
   height: auto;
   display: block;
   margin: auto;
@@ -53,7 +53,6 @@ table.table-striped tbody tr:nth-child(odd) {
 tbody tr {
   background-color: #fff !important; /* Fondo blanco asegurado */
 }
-
 
 /* Estilo del carrusel */
 .carousel-inner {
@@ -104,4 +103,25 @@ tbody tr {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+  body {
+    padding: 0 1rem;
+  }
+
+  table {
+    font-size: 0.9rem; /* Reduce el tamaño del texto para tablas */
+  }
+
+  td img {
+    max-width: 100%; /* Asegura que las imágenes sean responsivas */
+    height: auto;
+  }
+
+  header {
+    font-size: 1.2rem; /* Ajusta el tamaño del texto en el encabezado */
+    padding: 0.5rem;
+  }
 }
