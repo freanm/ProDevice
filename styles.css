@@ -17,7 +17,7 @@ main {
   padding: 2rem;
 }
 
-/* Table styling */
+/* Estilo para la tabla */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -45,7 +45,7 @@ td img {
   padding: 0;
 }
 
-/* Table stripes */
+/* Sobrescribir el estilo de las filas impares de Bootstrap */
 table.table-striped tbody tr:nth-child(odd) {
   background-color: #fff !important; /* Asegura que las filas impares tengan fondo blanco */
 }
@@ -54,7 +54,7 @@ tbody tr {
   background-color: #fff !important; /* Fondo blanco asegurado */
 }
 
-/* Carousel styling */
+/* Estilo del carrusel */
 .carousel-inner {
   width: 100%;
   height: auto; /* Ajusta la altura de la fila según tus necesidades */
@@ -105,13 +105,13 @@ tbody tr {
 
   /* Ajuste para las imágenes en la tabla */
   td img {
-    max-width: 100%; /* Imágenes más grandes en dispositivos móviles */
+    max-width: 80%; /* Aumentamos el tamaño de las imágenes en dispositivos móviles */
     height: auto;
   }
 
   /* Ajuste de texto y tamaños de tabla en dispositivos móviles */
   table {
-    font-size: 0.9rem; /* Reduce el tamaño del texto para que se ajuste mejor en pantallas pequeñas */
+    font-size: 1rem; /* Reduce el tamaño del texto para que se ajuste mejor en pantallas pequeñas */
   }
 
   /* Header ajustado para pantallas pequeñas */
