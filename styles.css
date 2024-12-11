@@ -1,0 +1,107 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  padding: 2rem;
+}
+
+/* Estilo para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+thead {
+  background-color: #333;
+  color: #fff;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+td img {
+  max-width: 350px;
+  height: auto;
+  display: block;
+  margin: auto;
+  padding: 0;
+}
+
+/* Sobrescribir el estilo de las filas impares de Bootstrap */
+table.table-striped tbody tr:nth-child(odd) {
+  background-color: #fff !important; /* Asegura que las filas impares tengan fondo blanco */
+}
+
+/* Aseguramos que todas las filas tengan fondo blanco */
+tbody tr {
+  background-color: #fff !important; /* Fondo blanco asegurado */
+}
+
+
+/* Estilo del carrusel */
+.carousel-inner {
+  width: 100%;
+  height: auto; /* Ajusta la altura de la fila según tus necesidades */
+  overflow: hidden;
+  position: relative; /* Asegura que las flechas se posicionen correctamente */
+}
+
+/* Estilo de las flechas de navegación */
+.carousel-control-prev, .carousel-control-next {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;  /* Tamaño de las flechas */
+  width: 30px;  /* Ajuste de tamaño de las flechas */
+  height: 30px;  /* Asegura que las flechas sean visibles sin ocupar mucho espacio */
+  line-height: 30px;  /* Centra el contenido dentro de las flechas */
+  background-color: rgba(0, 0, 0, 0.5);  /* Fondo oscuro */
+  border-radius: 0%;  /* Hace que las flechas sean circulares */
+  display: flex;
+  justify-content: center;
+  align-items: center;  /* Centra las flechas */
+  position: absolute;
+  top: 50%;
+  z-index: 10;  /* Asegura que las flechas se muestren por encima del contenido */
+  transform: translateY(-50%);  /* Centra las flechas verticalmente */
+}
+
+/* Posicionamiento específico para cada flecha */
+.carousel-control-prev {
+  left: 10px;  /* Ajusta la posición de la flecha a la izquierda */
+}
+
+.carousel-control-next {
+  right: 10px;  /* Ajusta la posición de la flecha a la derecha */
+}
+
+/* Evita el espacio en blanco adicional */
+.carousel-control-prev, .carousel-control-next {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo para el cambio de color al pasar el ratón */
+.carousel-control-prev:hover, .carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.2);  /* Fondo más claro cuando se pasa el ratón */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.2);
+}

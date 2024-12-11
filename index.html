@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Electrónica</title>
+  
+  <!-- Estilo personalizado -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos adicionales -->
+  <style>
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    /* Aseguramos que todas las filas de la tabla sean blancas */
+    tbody tr {
+      background-color: #fff !important;
+    }
+
+    /* Carrusel */
+    .carousel-inner {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+      color: rgba(0, 0, 0, 0.5);
+      font-size: 1.5rem;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 0%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      z-index: 10;
+      transform: translateY(-50%);
+    }
+
+    .carousel-control-prev {
+      left: 10px;
+    }
+
+    .carousel-control-next {
+      right: 10px;
+    }
+
+    /* Cambiar color de las flechas al pasar el mouse */
+    .carousel-control-prev:hover, .carousel-control-next:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Catálogo de Electrónica</h1>
+  </header>
+  <main>
+    <table id="product-table" class="table">
+      <thead>
+        <tr>
+          <th>Imágenes</th>
+          <th>Nombre y Especificaciones</th>
+          <th>Estado</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aquí se insertarán los productos dinámicamente -->
+      </tbody>
+    </table>
+
+    
+  </main>
+  <footer>
+    <p>© 2024 Electrónica S.A.</p>
+  </footer>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- JavaScript personalizado -->
+  <script src="script.js"></script>
+</body>
+</html>
