@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const carouselDiv = document.createElement("div");
       carouselDiv.classList.add("carousel", "slide", "carousel-fade");
       carouselDiv.setAttribute("id", `carousel-${index}`);
-      carouselDiv.setAttribute("data-bs-ride", "carousel"); // Activar el desplazamiento automático
+      //carouselDiv.setAttribute("data-bs-ride", "carousel"); // Activar el desplazamiento automático
 
       const carouselInner = document.createElement("div");
       carouselInner.classList.add("carousel-inner");
