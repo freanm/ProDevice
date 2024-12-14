@@ -178,4 +178,34 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   renderBlocks(productos);
+  // Verificar si las imágenes se están recortando
+  const verificarRecorteImagenes = () => {
+    const imagenes = document.querySelectorAll(".product-block img");
+  
+    imagenes.forEach((imagen) => {
+      const { naturalWidth, naturalHeight } = imagen; // Dimensiones reales de la imagen
+      const { offsetWidth, offsetHeight } = imagen; // Dimensiones mostradas en el DOM
+  
+      console.log(
+        `Imagen: ${imagen.src}\n` +
+        `Dimensiones naturales: ${naturalWidth}x${naturalHeight}\n` +
+        `Dimensiones mostradas: ${offsetWidth}x${offsetHeight}`
+      );
+  
+      // Comparar las proporciones naturales con las mostradas
+      const proporcionNatural = naturalWidth / naturalHeight;
+      const proporcionMostrada = offsetWidth / offsetHeight;
+  
+      if (proporcionNatural !== proporcionMostrada) {
+        console.warn(`La imagen ${imagen.src} puede estar recortada.`);
+      } else {
+        console.log(`La imagen ${imagen.src} se está mostrando correctamente.`);
+      }
+    });
+  };
+  
+  // Llamar a la función después de renderizar los bloques
+  verificarRecorteImagenes();
+
+  
 });
