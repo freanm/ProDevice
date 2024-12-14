@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
      {
       nombre: "Notebook MSI SWORD 16 HX B14VFKG",
       precio: "$1.630.000",
-      especificaciones: - Procesador: Intel i7-14650HX<br>
+      especificaciones:` - Procesador: Intel i7-14650HX<br>
                         - RAM: 16GB<br>
                         - Almacenamiento: 1TB SSD<br>
                         - Gráfica: RTX4060 8GB
                         - Pantalla: 16" FHD<br>
-                        - Sistema Operativo: Windows 11,
+                        - Sistema Operativo: Windows 11`,
       estado: "Nuevo", // Agregar estado
       marca: "MSI", // Agregar marca
       imagenes: [
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       nombre: "Notebook Acer Aspire 3",
       precio: "$670.000",
-      especificaciones: - Procesador: Intel i7-1255U<br>
+      especificaciones:` - Procesador: Intel i7-1255U<br>
                         - RAM: 8GB<br>
                         - Almacenamiento: 512GB SSD<br>
                         - Pantalla: 15.6" FHD<br>
@@ -36,13 +36,13 @@ document.addEventListener("DOMContentLoaded", function () {
       ]
     },
     {
-      nombre: "Notebook Asus VivoBook 15 (M1502QA-BH74)",
+      nombre: "Notebook Asus VivoBook 15 (M1502QA-BH74)"`,
       precio: "$650.000",
-      especificaciones: - Procesador: AMD R7-5800HS<br>
+      especificaciones:` - Procesador: AMD R7-5800HS<br>
                          - RAM: 16GB<br>
                          - Almacenamiento: 512GB SSD<br>
                          - Pantalla: 15.6" FHD<br>
-                         - Sistema Operativo: Windows 11,
+                         - Sistema Operativo: Windows 11`,
       estado: "Nuevo",
       marca: "Asus",
       imagenes: [
@@ -53,11 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       nombre: "Notebook Lenovo IdeaPad 1 15AMN7",
-      especificaciones: Procesador: AMD Ryzen 5 7520U<br>
+      especificaciones:` Procesador: AMD Ryzen 5 7520U<br>
                          - RAM: 8GB<br>
                          - Almacenamiento: 512GB SSD<br>
                          - Pantalla: 15.6" FHD<br>
-                         - Sistema Operativo: Windows 11,
+                         - Sistema Operativo: Windows 11`,
       precio: "$560.000",
       estado: "Nuevo",
       marca: "Lenovo",
@@ -68,12 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       nombre: "Notebook HP 15-dy2795wm",
-      especificaciones: Procesador: Intel i5-1135G7<br>
+      especificaciones:` Procesador: Intel i5-1135G7<br>
                          - RAM: 8GB<br>
                          - Almacenamiento: 256GB SSD<br>
                          - Pantalla: 15.6" FHD<br>
                          - Sistema Operativo: Windows 11<br>
-                         - De Regalo: Speaker Altomax,
+                         - De Regalo: Speaker Altomax`,
       precio: "$500.000",
       estado: "Nuevo",
       marca: "HP",
