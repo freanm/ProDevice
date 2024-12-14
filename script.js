@@ -86,95 +86,88 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
 const renderBlocks = (productos) => {
-  const blocksContainer = document.getElementById("product-blocks");
-  blocksContainer.innerHTML = "";
+    const blocksContainer = document.getElementById("product-blocks");
+    blocksContainer.innerHTML = "";
 
-  productos.forEach((producto, index) => {
-    const productBlock = document.createElement("div");
-    productBlock.classList.add("product-block", "card", "mb-4");
+    productos.forEach((producto) => {
+      const productBlock = document.createElement("div");
+      productBlock.classList.add("product-block");
 
-    // Carrusel de imágenes
-    const imageCell = document.createElement("div");
-    const carouselDiv = document.createElement("div");
-    carouselDiv.classList.add("carousel", "slide", "carousel-fade");
-    carouselDiv.setAttribute("id", `carousel-${index}`);
-    carouselDiv.setAttribute("data-bs-ride", "carousel"); // Activar el desplazamiento automático
+      // Carrusel de imágenes
+      const imageCell = document.createElement("div");
+      const carouselDiv = document.createElement("div");
+      carouselDiv.classList.add("carousel", "slide", "carousel-fade");
+      carouselDiv.setAttribute("data-bs-ride", "carousel");
 
-    const carouselInner = document.createElement("div");
-    carouselInner.classList.add("carousel-inner");
+      const carouselInner = document.createElement("div");
+      carouselInner.classList.add("carousel-inner");
 
-    // Crear las imágenes en el carrusel
-    producto.imagenes.forEach((img, imgIndex) => {
-      const item = document.createElement("div");
-      item.classList.add("carousel-item");
-      if (imgIndex === 0) item.classList.add("active");
+      producto.imagenes.forEach((img, index) => {
+        const item = document.createElement("div");
+        item.classList.add("carousel-item");
+        if (index === 0) item.classList.add("active");
 
-      const imgElement = document.createElement("img");
-      imgElement.src = img;
-      imgElement.alt = producto.nombre;
-      imgElement.classList.add("d-block", "w-100");
-      item.appendChild(imgElement);
-      carouselInner.appendChild(item);
+        const imgElement = document.createElement("img");
+        imgElement.src = img;
+        imgElement.alt = producto.nombre;
+        item.appendChild(imgElement);
+        carouselInner.appendChild(item);
+      });
+
+      carouselDiv.appendChild(carouselInner);
+
+      const prevControl = document.createElement("button");
+      prevControl.classList.add("carousel-control-prev");
+      prevControl.setAttribute("type", "button");
+      prevControl.setAttribute("data-bs-target", `#carouselExampleControls${producto.nombre}`);
+      prevControl.setAttribute("data-bs-slide", "prev");
+
+      const prevIcon = document.createElement("span");
+      prevIcon.classList.add("carousel-control-prev-icon");
+      prevIcon.setAttribute("aria-hidden", "true");
+      prevControl.appendChild(prevIcon);
+
+      const nextControl = document.createElement("button");
+      nextControl.classList.add("carousel-control-next");
+      nextControl.setAttribute("type", "button");
+      nextControl.setAttribute("data-bs-target", `#carouselExampleControls${producto.nombre}`);
+      nextControl.setAttribute("data-bs-slide", "next");
+
+      const nextIcon = document.createElement("span");
+      nextIcon.classList.add("carousel-control-next-icon");
+      nextIcon.setAttribute("aria-hidden", "true");
+      nextControl.appendChild(nextIcon);
+
+      carouselDiv.appendChild(prevControl);
+      carouselDiv.appendChild(nextControl);
+      imageCell.appendChild(carouselDiv);
+
+      // Detalles del producto
+      const detailsCell = document.createElement("div");
+      detailsCell.classList.add("product-details");
+
+      const productName = document.createElement("h3");
+      productName.innerHTML = producto.nombre;
+      detailsCell.appendChild(productName);
+
+      const productSpecs = document.createElement("p");
+      productSpecs.innerHTML = producto.especificaciones;
+      detailsCell.appendChild(productSpecs);
+
+      const productStatus = document.createElement("p");
+      productStatus.textContent = `Estado: ${producto.estado}`;
+      detailsCell.appendChild(productStatus);
+
+      const productPrice = document.createElement("p");
+      productPrice.textContent = `Precio: ${producto.precio}`;
+      detailsCell.appendChild(productPrice);
+
+      productBlock.appendChild(imageCell);
+      productBlock.appendChild(detailsCell);
+
+      blocksContainer.appendChild(productBlock);
     });
+  };
 
-    carouselDiv.appendChild(carouselInner);
-
-    // Controles de navegación del carrusel
-    const prevControl = document.createElement("button");
-    prevControl.classList.add("carousel-control-prev");
-    prevControl.setAttribute("type", "button");
-    prevControl.setAttribute("data-bs-target", `#carousel-${index}`);
-    prevControl.setAttribute("data-bs-slide", "prev");
-
-    const prevIcon = document.createElement("span");
-    prevIcon.classList.add("carousel-control-prev-icon");
-    prevIcon.setAttribute("aria-hidden", "true");
-    prevControl.appendChild(prevIcon);
-
-    const nextControl = document.createElement("button");
-    nextControl.classList.add("carousel-control-next");
-    nextControl.setAttribute("type", "button");
-    nextControl.setAttribute("data-bs-target", `#carousel-${index}`);
-    nextControl.setAttribute("data-bs-slide", "next");
-
-    const nextIcon = document.createElement("span");
-    nextIcon.classList.add("carousel-control-next-icon");
-    nextIcon.setAttribute("aria-hidden", "true");
-    nextControl.appendChild(nextIcon);
-
-    carouselDiv.appendChild(prevControl);
-    carouselDiv.appendChild(nextControl);
-    imageCell.appendChild(carouselDiv);
-
-    // Detalles del producto
-    const detailsCell = document.createElement("div");
-    detailsCell.classList.add("product-details", "card-body");
-
-    const productName = document.createElement("h5");
-    productName.classList.add("card-title");
-    productName.innerHTML = producto.nombre;
-    detailsCell.appendChild(productName);
-
-    const productSpecs = document.createElement("p");
-    productSpecs.classList.add("card-text");
-    productSpecs.innerHTML = producto.especificaciones;
-    detailsCell.appendChild(productSpecs);
-
-    const productStatus = document.createElement("p");
-    productStatus.classList.add("card-text");
-    productStatus.textContent = `Estado: ${producto.estado}`;
-    detailsCell.appendChild(productStatus);
-
-    const productPrice = document.createElement("p");
-    productPrice.classList.add("card-text");
-    productPrice.textContent = `Precio: ${producto.precio}`;
-    detailsCell.appendChild(productPrice);
-
-    productBlock.appendChild(imageCell);
-    productBlock.appendChild(detailsCell);
-
-    blocksContainer.appendChild(productBlock);
-  });
-};
-
-renderBlocks(productos);
+  renderBlocks(productos);
+});
