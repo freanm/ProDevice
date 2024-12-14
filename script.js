@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Lista de productos con la columna "Estado"
   const productos = [
     {
-      nombre: "Notebook MSI SWORD 16 HX B14VFKG-202US",
-      precio: "$670.000",
+      nombre: "Notebook MSI SWORD 16 HX B14VFKG",
+      precio: "$1.630.000",
       especificaciones: `- Procesador: Intel i7-14650HX<br>
                         - RAM: 16GB<br>
                         - Almacenamiento: 1TB SSD<br>
@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
       estado: "Nuevo", // Agregar estado
       marca: "MSI", // Agregar marca
       imagenes: [
-        "images/Notebook Acer Aspire 3/3298060_1_1.webp",
-        "images/Notebook Acer Aspire 3/3298060_2_1.webp",
-        "images/Notebook Acer Aspire 3/3298060_3_1.webp",
-        "images/Notebook Acer Aspire 3/3298060_4_1.webp"
+        "images/Notebook MSI SWORD 16 HX B14VFKG/4300496_1_1.webp",
+        "images/Notebook MSI SWORD 16 HX B14VFKG/4300496_2_1.webp",
+        "images/Notebook MSI SWORD 16 HX B14VFKG/4300496_3_1.webp",
+        "images/Notebook MSI SWORD 16 HX B14VFKG/4300496_4_1.webp"
       ]
     },
     {
