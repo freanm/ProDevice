@@ -120,9 +120,13 @@ header {
 
   .product-block img {
     width: 100%;
+    height: auto; /* Mantener proporción sin recorte */
+    object-fit: contain; /* Ajustar la imagen al bloque sin recortarse */
+    max-width: 100%; /* Evitar desbordamiento */
   }
 
   .filters select {
     width: 100%;
   }
 }
+
