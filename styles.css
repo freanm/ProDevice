@@ -60,7 +60,7 @@ header {
 }
 
 .carousel-item img {
-  width: 100%;
+  width: 80%;
   height: 300px; /* Ajuste de tamaño para imágenes del carrusel */
   object-fit: cover;
 }
