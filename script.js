@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "images/Notebook Acer Aspire 3/3298060_4_1.webp"
       ]
     },
-    {
+    /*{
       nombre: "Notebook Asus VivoBook 15 (M1502QA-BH74)",
       precio: "$650.000",
       especificaciones: `- Procesador: AMD R7-5800HS<br>
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "images/Notebook Asus VivoBook 15 (M1502QA-BH74)/4641964_2_cff7_1.webp",
         "images/Notebook Asus VivoBook 15 (M1502QA-BH74)/4641964_3_5c61_1.webp"
       ]
-    },
+    },*/
     {
       nombre: "Notebook Lenovo IdeaPad 1 15AMN7",
       especificaciones: `Procesador: AMD Ryzen 5 7520U<br>
