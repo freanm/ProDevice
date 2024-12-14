@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
       estado: "Nuevo",
       marca: "HP",
       imagenes: [
-        "images/Notebook HP 15-dy2795wm/4573852_1_aef3_1.webp",
-        "images/Notebook HP 15-dy2795wm/4573852_2_3e2e_1.webp",
-        "images/Notebook HP 15-dy2795wm/4573852_3_6ba9_1.webp"
+        "images/Notebook HP 15-FD0999NR/4527763_1_c334_1.webp",
+        "images/Notebook HP 15-FD0999NR/4527763_2_4374_1.webp",
+        "images/Notebook HP 15-FD0999NR/4527763_3_f302_1.webp"
       ]
     }
     {
