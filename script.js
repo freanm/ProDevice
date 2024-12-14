@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                          - Sistema Operativo: Windows 11
                          - Bateria: 3 células, 41 Wh
                          - Video: Intel Iris XE Graphics`,
-      precio: "$550.000",
+      precio: "$530.000",
       estado: "Nuevo",
       marca: "HP",
       imagenes: [
