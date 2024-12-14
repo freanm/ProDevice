@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "images/Notebook HP 15-FD0999NR/4527763_2_4374_1.webp",
         "images/Notebook HP 15-FD0999NR/4527763_3_f302_1.webp"
       ]
-    }
+    },
     {
       nombre: "Notebook Acer Aspire 3",
       precio: "$670.000",
