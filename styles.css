@@ -59,11 +59,20 @@ header {
   position: relative;
 }
 
+/*
 .carousel-item img {
   width: 100%;
-  height: 250px; /* Ajuste de tamaño para imágenes del carrusel */
+  height: 250px; // Ajuste de tamaño para imágenes del carrusel
   object-fit: cover;
+}*/
+
+.carousel-inner img {
+  width: 100%;           /* Ajustar al ancho del contenedor */
+  height: auto;          /* Mantener las proporciones de la imagen */
+  object-fit: contain;   /* Ajustar la imagen sin recortarla */
+  max-height: 400px;     /* Limitar la altura máxima para evitar imágenes demasiado grandes */
 }
+
 
 /* Estilos de los controles del carrusel */
 .carousel-control-prev, .carousel-control-next {
