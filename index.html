@@ -189,52 +189,5 @@
 
   <!-- JavaScript personalizado -->
   <script src="script.js"></script>
-
-    // Generar los bloques de productos
-    const productBlocksContainer = document.getElementById('product-blocks');
-
-    productos.forEach((producto, index) => {
-      const divProducto = document.createElement('div');
-      divProducto.classList.add('col-md-4');
-      divProducto.classList.add('product-block');
-
-      // Crear el carrusel
-      const celdaImagenes = document.createElement("td");
-      celdaImagenes.innerHTML = ` 
-        <div id="carousel-${index}" class="carousel slide" data-bs-ride="false">
-          <div class="carousel-inner">
-            ${producto.imagenes
-              .map((img, idx) => `
-                <div class="carousel-item ${idx === 0 ? "active" : ""}">
-                  <img src="${img}" class="d-block w-100" alt="Imagen ${idx + 1}">
-                </div>
-              `)
-              .join("")}
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carousel-${index}" data-bs-slide="prev" style="color: black;">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carousel-${index}" data-bs-slide="next" style="color: black;">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-          </button>
-        </div>
-      `;
-
-      const divDetalles = document.createElement('div');
-      divDetalles.classList.add('product-details');
-      divDetalles.innerHTML = `
-        <h3>${producto.nombre}</h3>
-        <p>${producto.especificaciones}</p>
-        <p><strong>Estado:</strong> ${producto.estado}</p>
-        <p><strong>Precio:</strong> ${producto.precio}</p>
-      `;
-
-      divProducto.appendChild(celdaImagenes);
-      divProducto.appendChild(divDetalles);
-      productBlocksContainer.appendChild(divProducto);
-    });
-  </script>
 </body>
 </html>
