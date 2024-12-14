@@ -85,83 +85,70 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   ];
 
-  const createCarouselControl = (targetId, direction) => {
-    const button = document.createElement("button");
-    button.classList.add(`carousel-control-${direction}`);
-    button.setAttribute("type", "button");
-    button.setAttribute("data-bs-target", `#${targetId}`);
-    button.setAttribute("data-bs-slide", direction);
-    const span = document.createElement("span");
-    span.classList.add(`carousel-control-${direction}-icon`);
-    span.setAttribute("aria-hidden", "true");
-    button.appendChild(span);
-    return button;
-  };
-
   const renderBlocks = (productos) => {
-    const blocksContainer = document.getElementById("product-blocks");
-    if (!blocksContainer) {
-      console.error("No se encontró el contenedor 'product-blocks' en el HTML");
-      return;
-    }
-    
+const blocksContainer = document.getElementById("product-blocks");
     blocksContainer.innerHTML = "";
-
-    productos.forEach((producto, index) => {
+    productos.forEach((producto) => {
       const productBlock = document.createElement("div");
       productBlock.classList.add("product-block");
-
       // Carrusel de imágenes
       const imageCell = document.createElement("div");
       const carouselDiv = document.createElement("div");
       carouselDiv.classList.add("carousel", "slide", "carousel-fade");
       carouselDiv.setAttribute("data-bs-ride", "carousel");
-      carouselDiv.setAttribute("id", `carouselExampleControls${index}`);
-      
       const carouselInner = document.createElement("div");
       carouselInner.classList.add("carousel-inner");
-      
-      producto.imagenes.forEach((img, imageIndex) => {
+      producto.imagenes.forEach((img, index) => {
         const item = document.createElement("div");
-        item.classList.add("carousel-item", imageIndex === 0 ? "active" : "");
+        item.classList.add("carousel-item");
+        if (index === 0) item.classList.add("active");
         const imgElement = document.createElement("img");
         imgElement.src = img;
         imgElement.alt = producto.nombre;
         item.appendChild(imgElement);
         carouselInner.appendChild(item);
       });
-      
       carouselDiv.appendChild(carouselInner);
-      carouselDiv.appendChild(createCarouselControl(`carouselExampleControls${index}`, "prev"));
-      carouselDiv.appendChild(createCarouselControl(`carouselExampleControls${index}`, "next"));
+      const prevControl = document.createElement("button");
+      prevControl.classList.add("carousel-control-prev");
+      prevControl.setAttribute("type", "button");
+      prevControl.setAttribute("data-bs-target", #carouselExampleControls${producto.nombre});
+      prevControl.setAttribute("data-bs-slide", "prev");
+      const prevIcon = document.createElement("span");
+      prevIcon.classList.add("carousel-control-prev-icon");
+      prevIcon.setAttribute("aria-hidden", "true");
+      prevControl.appendChild(prevIcon);
+      const nextControl = document.createElement("button");
+      nextControl.classList.add("carousel-control-next");
+      nextControl.setAttribute("type", "button");
+      nextControl.setAttribute("data-bs-target", #carouselExampleControls${producto.nombre});
+      nextControl.setAttribute("data-bs-slide", "next");
+      const nextIcon = document.createElement("span");
+      nextIcon.classList.add("carousel-control-next-icon");
+      nextIcon.setAttribute("aria-hidden", "true");
+      nextControl.appendChild(nextIcon);
+      carouselDiv.appendChild(prevControl);
+      carouselDiv.appendChild(nextControl);
       imageCell.appendChild(carouselDiv);
-
       // Detalles del producto
       const detailsCell = document.createElement("div");
       detailsCell.classList.add("product-details");
-      
       const productName = document.createElement("h3");
       productName.innerHTML = producto.nombre;
       detailsCell.appendChild(productName);
-      
       const productSpecs = document.createElement("p");
       productSpecs.innerHTML = producto.especificaciones;
       detailsCell.appendChild(productSpecs);
-      
       const productStatus = document.createElement("p");
-      productStatus.textContent = `Estado: ${producto.estado}`;
+      productStatus.textContent = Estado: ${producto.estado};
       detailsCell.appendChild(productStatus);
-      
       const productPrice = document.createElement("p");
-      productPrice.textContent = `Precio: ${producto.precio}`;
+      productPrice.textContent = Precio: ${producto.precio};
       detailsCell.appendChild(productPrice);
-
-      // Agregar al bloque del producto
       productBlock.appendChild(imageCell);
       productBlock.appendChild(detailsCell);
       blocksContainer.appendChild(productBlock);
     });
   };
-
-  renderBlocks(productos);
+renderBlocks(productos);
 });
