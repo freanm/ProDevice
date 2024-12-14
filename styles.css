@@ -30,34 +30,34 @@ header {
 }
 
 .product-block img {
-  object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin recortarse */
+  object-fit: contain; /* Ajusta la imagen sin recortarla */
   max-width: 100%; /* La imagen no excederá el ancho del contenedor */
   max-height: 100%; /* La imagen no excederá la altura del contenedor */
-  display: block; /* Evitar el comportamiento inline de las imágenes */
+  height: auto; /* Mantener proporciones */
+  display: block; /* Asegurar un correcto flujo en el layout */
+  margin: 0 auto; /* Centrar imágenes en su contenedor */
 }
 
-/* Carrusel */
+/* Estilo del contenedor del carrusel */
 .carousel-inner {
   width: 100%;
-  height: 400px;       /* Altura fija para garantizar que todas las imágenes sean consistentes */
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: auto; /* Ajustar la altura en base al contenido */
   overflow: hidden;
-  background-color: #f5f5f5; /* Color de fondo para imágenes que no llenen el espacio */
+  position: relative;
 }
 
 .carousel-inner img {
-  width: auto;          /* Mantener la proporción de la imagen */
-  height: 100%;         /* Ajustar la altura al contenedor */
-  object-fit: contain;  /* Asegurar que no se recorte */
-  display: block;
-  margin: 0 auto;
+  width: 100%;           /* Ajustar al ancho del contenedor */
+  height: auto;          /* Mantener las proporciones de la imagen */
+  object-fit: contain;   /* Ajustar la imagen sin recortarla */
+  max-height: 400px;     /* Limitar la altura máxima para evitar imágenes demasiado grandes */
+  display: block;        /* Asegurar que las imágenes son bloques */
+  margin: 0 auto;        /* Centrar las imágenes en el contenedor */
 }
 
 /* Estilos de los controles del carrusel */
-.carousel-control-prev, .carousel-control-next {
+.carousel-control-prev,
+.carousel-control-next {
   color: rgba(0, 0, 0, 0.5);
   font-size: 2rem;
   width: 40px;
@@ -79,8 +79,25 @@ header {
   right: 10px;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de los detalles del producto */
+.product-details {
+  padding-left: 1.5rem;
+  flex: 1;
+}
+
+.product-details h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.product-details p {
+  margin-bottom: 0.5rem;
+  color: #555;
 }
 
 /* Estilo para filtros */
@@ -110,8 +127,18 @@ header {
   }
 
   /* Ajustes para imágenes en móviles */
-  .carousel-inner {
-    height: 300px; /* Ajustar altura para pantallas más pequeñas */
+  .product-block img {
+    width: 100%;              /* Asegurar que la imagen se ajuste al ancho */
+    height: auto;             /* Mantener las proporciones */
+    object-fit: contain;      /* Evitar el recorte */
+    max-width: 100%;          /* Evitar que la imagen se desborde */
+  }
+
+  .carousel-inner img {
+    max-height: 300px;        /* Ajuste para pantallas móviles */
+    object-fit: contain;      /* Mantener la imagen ajustada sin recorte */
+    width: 100%;              /* Asegurar que ocupe todo el espacio */
+    height: auto;             /* Mantener las proporciones */
   }
 
   .filters select {
