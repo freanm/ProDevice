@@ -155,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
       productosFiltrados = productosFiltrados.filter(producto => producto.marca === marcaSeleccionada);
     }
 
+    /*
     // Filtrar por precio
     if (precioSeleccionado) {
       let rangoPrecio = precioSeleccionado.split('-');
@@ -171,8 +172,42 @@ document.addEventListener("DOMContentLoaded", () => {
           return !isNaN(precioProducto) && precioProducto > 1000000;
         });
       }
-}
+    }*/
 
+    // Filtrar por precio
+  if (precioSeleccionado) {
+    console.log("Precio seleccionado:", precioSeleccionado);
+    let rangoPrecio = precioSeleccionado.split('-');
+  
+    // Filtrar por rango de precio
+    if (rangoPrecio.length === 2) {
+      const minPrecio = parseInt(rangoPrecio[0].replace(/\./g, '').trim());
+      const maxPrecio = parseInt(rangoPrecio[1].replace(/\./g, '').trim());
+      console.log("Rango de precios:", { minPrecio, maxPrecio });
+  
+      productosFiltrados = productosFiltrados.filter(producto => {
+        const precioProducto = parseInt(producto.precio.replace('$', '').replace(/\./g, '').trim());
+        console.log("Precio del producto:", producto.nombre, precioProducto);
+        return !isNaN(precioProducto) && precioProducto >= minPrecio && precioProducto <= maxPrecio;
+      });
+  
+    // Filtrar precios mayores a 1,000,000
+    } else if (precioSeleccionado === "1000000+") {
+      productosFiltrados = productosFiltrados.filter(producto => {
+        const precioProducto = parseInt(producto.precio.replace('$', '').replace(/\./g, '').trim());
+        console.log("Precio del producto:", producto.nombre, precioProducto);
+        return !isNaN(precioProducto) && precioProducto > 1000000;
+      });
+  
+    } else {
+      console.warn("Formato de precio seleccionado no reconocido:", precioSeleccionado);
+    }
+  } else {
+    console.warn("No se seleccionó un precio.");
+  }
+
+
+    
 
     renderProductos(productosFiltrados);
   }
