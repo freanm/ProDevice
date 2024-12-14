@@ -1,29 +1,68 @@
 document.addEventListener("DOMContentLoaded", function () {
   const productos = [
     {
-      nombre: "Notebook Acer Aspire 5",
-      precio: "$389.000",
-      especificaciones: `- Procesador: Intel Core i5<br>- RAM: 8GB<br>- Almacenamiento: 512GB SSD<br>- Pantalla: 15.6" Full HD<br>- Sistema Operativo: Windows 10`,
-      estado: "Nuevo",
-      marca: "Acer",
+      nombre: "Notebook Acer Aspire 3",
+      precio: "$670.000",
+      especificaciones: `- Procesador: Intel i7-1255U<br>
+                        - RAM: 8GB<br>
+                        - Almacenamiento: 512GB SSD<br>
+                        - Pantalla: 15.6" FHD<br>
+                        - Sistema Operativo: Windows 11`,
+      estado: "Nuevo", // Agregar estado
+      marca: "Acer", // Agregar marca
       imagenes: [
-        "images/Notebook Acer Aspire 5/4300101_1_1.webp",
-        "images/Notebook Acer Aspire 5/4300101_2_1.webp",
-        "images/Notebook Acer Aspire 5/4300101_3_1.webp",
-        "images/Notebook Acer Aspire 5/4300101_4_1.webp"
+        "images/Notebook Acer Aspire 3/3298060_1_1.webp",
+        "images/Notebook Acer Aspire 3/3298060_2_1.webp",
+        "images/Notebook Acer Aspire 3/3298060_3_1.webp",
+        "images/Notebook Acer Aspire 3/3298060_4_1.webp"
       ]
     },
     {
-      nombre: "Notebook MSI SWORD 16 HX B14VFKG",
-      precio: "$659.000",
-      especificaciones: `- Procesador: Intel Core i7<br>- RAM: 16GB<br>- Almacenamiento: 1TB SSD<br>- Pantalla: 16" Full HD<br>- Sistema Operativo: Windows 11`,
+      nombre: "Notebook Asus VivoBook 15 (M1502QA-BH74)",
+      precio: "$650.000",
+      especificaciones: `- Procesador: AMD R7-5800HS<br>
+                         - RAM: 16GB<br>
+                         - Almacenamiento: 512GB SSD<br>
+                         - Pantalla: 15.6" FHD<br>
+                         - Sistema Operativo: Windows 11`,
       estado: "Nuevo",
-      marca: "MSI",
+      marca: "Asus",
       imagenes: [
-        "images/Notebook MSI SWORD 16 HX B14VFKG/4300496_1_1.webp",
-        "images/Notebook MSI SWORD 16 HX B14VFKG/4300496_2_1.webp",
-        "images/Notebook MSI SWORD 16 HX B14VFKG/4300496_3_1.webp",
-        "images/Notebook MSI SWORD 16 HX B14VFKG/4300496_4_1.webp"
+        "images/Notebook Asus VivoBook 15 (M1502QA-BH74)/4641964_1_29cc_1.webp",
+        "images/Notebook Asus VivoBook 15 (M1502QA-BH74)/4641964_2_cff7_1.webp",
+        "images/Notebook Asus VivoBook 15 (M1502QA-BH74)/4641964_3_5c61_1.webp"
+      ]
+    },
+    {
+      nombre: "Notebook Lenovo IdeaPad 1 15AMN7",
+      especificaciones: `Procesador: AMD Ryzen 5 7520U<br>
+                         - RAM: 8GB<br>
+                         - Almacenamiento: 512GB SSD<br>
+                         - Pantalla: 15.6" FHD<br>
+                         - Sistema Operativo: Windows 11`,
+      precio: "$560.000",
+      estado: "Nuevo",
+      marca: "Lenovo",
+      imagenes: [
+        "images/Notebook Lenovo IdeaPad 1 15AMN7/4596691_1_c708_1.webp",
+        "images/Notebook Lenovo IdeaPad 1 15AMN7/4596691_2_3b04_1.webp"
+      ]
+    },
+    {
+      nombre: "Notebook HP 15-dy2795wm",
+      especificaciones: `Procesador: Intel i5-1135G7<br>
+                         - RAM: 8GB<br>
+                         - Almacenamiento: 256GB SSD<br>
+                         - Pantalla: 15.6" FHD<br>
+                         - Sistema Operativo: Windows 11<br>
+                         - De Regalo: Speaker Altomax`,
+      precio: "$500.000",
+      estado: "Nuevo",
+      marca: "HP",
+      imagenes: [
+        "images/Notebook HP 15-dy2795wm/4573852_1_aef3_1.webp",
+        "images/Notebook HP 15-dy2795wm/4573852_2_3e2e_1.webp",
+        "images/Notebook HP 15-dy2795wm/4573852_3_6ba9_1.webp"
       ]
     }
   ];
