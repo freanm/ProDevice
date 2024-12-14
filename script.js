@@ -1,9 +1,22 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const productos = [
     {
+      nombre: "Notebook Acer Aspire 5",
+      precio: "$389.000",
+      especificaciones: `- Procesador: Intel Core i5<br>- RAM: 8GB<br>- Almacenamiento: 512GB SSD<br>- Pantalla: 15.6" Full HD<br>- Sistema Operativo: Windows 10`,
+      estado: "Nuevo",
+      marca: "Acer",
+      imagenes: [
+        "images/Notebook Acer Aspire 5/4300101_1_1.webp",
+        "images/Notebook Acer Aspire 5/4300101_2_1.webp",
+        "images/Notebook Acer Aspire 5/4300101_3_1.webp",
+        "images/Notebook Acer Aspire 5/4300101_4_1.webp"
+      ]
+    },
+    {
       nombre: "Notebook MSI SWORD 16 HX B14VFKG",
-      precio: "$1.630.000",
-      especificaciones: `- Procesador: Intel i7-14650HX<br>- RAM: 16GB<br>- Almacenamiento: 1TB SSD<br>- Pantalla: 16" FHD<br>- Sistema Operativo: Windows 11`,
+      precio: "$659.000",
+      especificaciones: `- Procesador: Intel Core i7<br>- RAM: 16GB<br>- Almacenamiento: 1TB SSD<br>- Pantalla: 16" Full HD<br>- Sistema Operativo: Windows 11`,
       estado: "Nuevo",
       marca: "MSI",
       imagenes: [
@@ -12,25 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
         "images/Notebook MSI SWORD 16 HX B14VFKG/4300496_3_1.webp",
         "images/Notebook MSI SWORD 16 HX B14VFKG/4300496_4_1.webp"
       ]
-    },
-    {
-      nombre: "Notebook Lenovo IdeaPad 1 15AMN7",
-      precio: "$299.000",
-      especificaciones: `- Procesador: Intel Celeron N4020<br>- RAM: 4GB<br>- Almacenamiento: 128GB SSD<br>- Pantalla: 15.6" HD<br>- Sistema Operativo: Windows 11`,
-      estado: "Nuevo",
-      marca: "Lenovo",
-      imagenes: [
-        "images/Notebook Lenovo IdeaPad 1 15AMN7/4300050_1_1.webp",
-        "images/Notebook Lenovo IdeaPad 1 15AMN7/4300050_2_1.webp",
-        "images/Notebook Lenovo IdeaPad 1 15AMN7/4300050_3_1.webp",
-        "images/Notebook Lenovo IdeaPad 1 15AMN7/4300050_4_1.webp"
-      ]
     }
   ];
 
   const renderBlocks = (productos) => {
     const blocksContainer = document.getElementById("product-blocks");
-    blocksContainer.innerHTML = ""; // Limpiar bloques existentes
+    blocksContainer.innerHTML = "";
 
     productos.forEach((producto) => {
       const productBlock = document.createElement("div");
@@ -111,29 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
       blocksContainer.appendChild(productBlock);
     });
   };
-
-  const applyFilters = () => {
-    const brandFilter = document.getElementById("brand-filter").value;
-    const priceFilter = document.getElementById("price-filter").value;
-
-    let filteredProducts = productos;
-
-    if (brandFilter) {
-      filteredProducts = filteredProducts.filter((producto) => producto.marca === brandFilter);
-    }
-
-    if (priceFilter) {
-      const [minPrice, maxPrice] = priceFilter.split("-").map((v) => (v === "+" ? Infinity : parseInt(v)));
-      filteredProducts = filteredProducts.filter(
-        (producto) => parseInt(producto.precio.replace(/[^0-9]/g, "")) >= minPrice && parseInt(producto.precio.replace(/[^0-9]/g, "")) <= maxPrice
-      );
-    }
-
-    renderBlocks(filteredProducts);
-  };
-
-  document.getElementById("brand-filter").addEventListener("change", applyFilters);
-  document.getElementById("price-filter").addEventListener("change", applyFilters);
 
   renderBlocks(productos);
 });
