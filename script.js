@@ -162,16 +162,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const minPrecio = parseInt(rangoPrecio[0]);
         const maxPrecio = parseInt(rangoPrecio[1]);
         productosFiltrados = productosFiltrados.filter(producto => {
-          const precioProducto = parseInt(producto.precio.replace('$', '').replace('.', '').trim());
-          return precioProducto >= minPrecio && precioProducto <= maxPrecio;
+          const precioProducto = parseInt(producto.precio.replace('$', '').replace(/\./g, '').trim());
+          return !isNaN(precioProducto) && precioProducto >= minPrecio && precioProducto <= maxPrecio;
         });
       } else if (precioSeleccionado === "1000000+") {
         productosFiltrados = productosFiltrados.filter(producto => {
-          const precioProducto = parseInt(producto.precio.replace('$', '').replace('.', '').trim());
-          return precioProducto > 1000000;
+          const precioProducto = parseInt(producto.precio.replace('$', '').replace(/\./g, '').trim());
+          return !isNaN(precioProducto) && precioProducto > 1000000;
         });
       }
-    }
+}
+
 
     renderProductos(productosFiltrados);
   }
