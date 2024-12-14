@@ -87,40 +87,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const renderBlocks = (productos) => {
   const blocksContainer = document.getElementById("product-blocks");
-  blocksContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar nuevos productos
+  blocksContainer.innerHTML = "";
 
   productos.forEach((producto, index) => {
     const productBlock = document.createElement("div");
-    productBlock.classList.add("product-block");
+    productBlock.classList.add("product-block", "card", "mb-4");
 
     // Carrusel de imágenes
     const imageCell = document.createElement("div");
     const carouselDiv = document.createElement("div");
     carouselDiv.classList.add("carousel", "slide", "carousel-fade");
     carouselDiv.setAttribute("id", `carousel-${index}`);
-    carouselDiv.setAttribute("data-bs-ride", "carousel");
+    carouselDiv.setAttribute("data-bs-ride", "carousel"); // Activar el desplazamiento automático
 
     const carouselInner = document.createElement("div");
     carouselInner.classList.add("carousel-inner");
 
-    // Crear las imágenes del carrusel
-    producto.imagenes.forEach((img, idx) => {
+    // Crear las imágenes en el carrusel
+    producto.imagenes.forEach((img, imgIndex) => {
       const item = document.createElement("div");
       item.classList.add("carousel-item");
-      if (idx === 0) item.classList.add("active"); // Marcar la primera imagen como activa
+      if (imgIndex === 0) item.classList.add("active");
 
       const imgElement = document.createElement("img");
       imgElement.src = img;
       imgElement.alt = producto.nombre;
-      imgElement.classList.add("d-block", "w-100"); // Asegurarse de que la imagen se ajuste correctamente
+      imgElement.classList.add("d-block", "w-100");
       item.appendChild(imgElement);
       carouselInner.appendChild(item);
     });
 
-    // Agregar el carrusel al contenedor
     carouselDiv.appendChild(carouselInner);
 
-    // Agregar controles (opcional)
+    // Controles de navegación del carrusel
     const prevControl = document.createElement("button");
     prevControl.classList.add("carousel-control-prev");
     prevControl.setAttribute("type", "button");
@@ -143,28 +142,31 @@ const renderBlocks = (productos) => {
     nextIcon.setAttribute("aria-hidden", "true");
     nextControl.appendChild(nextIcon);
 
-    // Añadir los controles al carrusel
     carouselDiv.appendChild(prevControl);
     carouselDiv.appendChild(nextControl);
     imageCell.appendChild(carouselDiv);
 
     // Detalles del producto
     const detailsCell = document.createElement("div");
-    detailsCell.classList.add("product-details");
+    detailsCell.classList.add("product-details", "card-body");
 
-    const productName = document.createElement("h3");
+    const productName = document.createElement("h5");
+    productName.classList.add("card-title");
     productName.innerHTML = producto.nombre;
     detailsCell.appendChild(productName);
 
     const productSpecs = document.createElement("p");
+    productSpecs.classList.add("card-text");
     productSpecs.innerHTML = producto.especificaciones;
     detailsCell.appendChild(productSpecs);
 
     const productStatus = document.createElement("p");
+    productStatus.classList.add("card-text");
     productStatus.textContent = `Estado: ${producto.estado}`;
     detailsCell.appendChild(productStatus);
 
     const productPrice = document.createElement("p");
+    productPrice.classList.add("card-text");
     productPrice.textContent = `Precio: ${producto.precio}`;
     detailsCell.appendChild(productPrice);
 
@@ -173,17 +175,6 @@ const renderBlocks = (productos) => {
 
     blocksContainer.appendChild(productBlock);
   });
-
-  // Habilitar el desplazamiento automático para cada carrusel
-  productos.forEach((_, index) => {
-    const carousel = new bootstrap.Carousel(`#carousel-${index}`, {
-      ride: "carousel",
-      interval: 5000, // Establecer el intervalo de 5 segundos
-      pause: "hover" // Pausar el carrusel al pasar el mouse
-    });
-  });
 };
 
-// Llamar a la función para renderizar los productos en bloques
 renderBlocks(productos);
-
