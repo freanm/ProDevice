@@ -19,6 +19,24 @@ document.addEventListener("DOMContentLoaded", function () {
       ]
     },
     {
+      nombre: "Notebook HP 15-FD0999NR",
+      especificaciones: `- Procesador: Intel i5-1235U<br>
+                         - RAM: 8GB DDR4<br>
+                         - Almacenamiento: 512GB SSD<br>
+                         - Pantalla: 15.6" FHD<br>
+                         - Sistema Operativo: Windows 11
+                         - Bateria: 3 células, 41 Wh
+                         - Video: Intel Iris XE Graphics`,
+      precio: "$550.000",
+      estado: "Nuevo",
+      marca: "HP",
+      imagenes: [
+        "images/Notebook HP 15-dy2795wm/4573852_1_aef3_1.webp",
+        "images/Notebook HP 15-dy2795wm/4573852_2_3e2e_1.webp",
+        "images/Notebook HP 15-dy2795wm/4573852_3_6ba9_1.webp"
+      ]
+    }
+    {
       nombre: "Notebook Acer Aspire 3",
       precio: "$670.000",
       especificaciones: `- Procesador: Intel i7-1255U<br>
