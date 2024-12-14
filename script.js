@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   ];
 
-const createCarouselControl = (targetId, direction) => {
+  const createCarouselControl = (targetId, direction) => {
     const button = document.createElement("button");
     button.classList.add(`carousel-control-${direction}`);
     button.setAttribute("type", "button");
@@ -100,6 +100,11 @@ const createCarouselControl = (targetId, direction) => {
 
   const renderBlocks = (productos) => {
     const blocksContainer = document.getElementById("product-blocks");
+    if (!blocksContainer) {
+      console.error("No se encontró el contenedor 'product-blocks' en el HTML");
+      return;
+    }
+    
     blocksContainer.innerHTML = "";
 
     productos.forEach((producto, index) => {
