@@ -59,18 +59,13 @@ header {
   position: relative;
 }
 
-/*
-.carousel-item img {
-  width: 100%;
-  height: 250px; // Ajuste de tamaño para imágenes del carrusel
-  object-fit: cover;
-}*/
-
 .carousel-inner img {
   width: 100%;           /* Ajustar al ancho del contenedor */
   height: auto;          /* Mantener las proporciones de la imagen */
   object-fit: contain;   /* Ajustar la imagen sin recortarla */
   max-height: 400px;     /* Limitar la altura máxima para evitar imágenes demasiado grandes */
+  margin: 0 auto;        /* Centrar las imágenes en el contenedor */
+  display: block;        /* Asegurar que las imágenes son bloques */
 }
 
 
@@ -127,15 +122,22 @@ header {
     padding-top: 1rem;
   }
 
+  /* Ajustes para imágenes en móviles */
   .product-block img {
-    width: 100%;
-    height: auto; /* Mantener proporción sin recorte */
-    object-fit: contain; /* Ajustar la imagen al bloque sin recortarse */
-    max-width: 100%; /* Evitar desbordamiento */
+    width: 100%;              /* Asegurarse que la imagen se ajuste al ancho */
+    height: auto;             /* Mantener las proporciones */
+    object-fit: contain;      /* Evitar el recorte */
+    max-width: 100%;          /* Evitar que la imagen se desborde */
+  }
+
+  .carousel-inner img {
+    max-height: 300px;        /* Ajuste para pantallas móviles */
+    object-fit: contain;      /* Mantener la imagen ajustada sin recorte */
+    width: 100%;              /* Asegurar que ocupe todo el espacio */
+    height: auto;             /* Mantener las proporciones */
   }
 
   .filters select {
     width: 100%;
   }
 }
-
