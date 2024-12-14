@@ -33,42 +33,28 @@ header {
   object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin recortarse */
   max-width: 100%; /* La imagen no excederá el ancho del contenedor */
   max-height: 100%; /* La imagen no excederá la altura del contenedor */
-  height: auto; /* Mantener la proporción de la imagen */
-  width: auto; /* Mantener la proporción de la imagen */
-}
-
-.product-details {
-  padding-left: 1.5rem;
-  flex: 1;
-}
-
-.product-details h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-}
-
-.product-details p {
-  margin-bottom: 0.5rem;
-  color: #555;
+  display: block; /* Evitar el comportamiento inline de las imágenes */
 }
 
 /* Carrusel */
 .carousel-inner {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  height: 400px;       /* Altura fija para garantizar que todas las imágenes sean consistentes */
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #f5f5f5; /* Color de fondo para imágenes que no llenen el espacio */
 }
 
 .carousel-inner img {
-  width: 100%;           /* Ajustar al ancho del contenedor */
-  height: auto;          /* Mantener las proporciones de la imagen */
-  object-fit: contain;   /* Ajustar la imagen sin recortarla */
-  max-height: 400px;     /* Limitar la altura máxima para evitar imágenes demasiado grandes */
-  margin: 0 auto;        /* Centrar las imágenes en el contenedor */
-  display: block;        /* Asegurar que las imágenes son bloques */
+  width: auto;          /* Mantener la proporción de la imagen */
+  height: 100%;         /* Ajustar la altura al contenedor */
+  object-fit: contain;  /* Asegurar que no se recorte */
+  display: block;
+  margin: 0 auto;
 }
-
 
 /* Estilos de los controles del carrusel */
 .carousel-control-prev, .carousel-control-next {
@@ -78,7 +64,7 @@ header {
   height: 40px;
   line-height: 40px;
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 0%;
+  border-radius: 50%;
   position: absolute;
   top: 50%;
   z-index: 10;
@@ -124,18 +110,8 @@ header {
   }
 
   /* Ajustes para imágenes en móviles */
-  .product-block img {
-    width: 100%;              /* Asegurarse que la imagen se ajuste al ancho */
-    height: auto;             /* Mantener las proporciones */
-    object-fit: contain;      /* Evitar el recorte */
-    max-width: 100%;          /* Evitar que la imagen se desborde */
-  }
-
-  .carousel-inner img {
-    max-height: 300px;        /* Ajuste para pantallas móviles */
-    object-fit: contain;      /* Mantener la imagen ajustada sin recorte */
-    width: 100%;              /* Asegurar que ocupe todo el espacio */
-    height: auto;             /* Mantener las proporciones */
+  .carousel-inner {
+    height: 300px; /* Ajustar altura para pantallas más pequeñas */
   }
 
   .filters select {
