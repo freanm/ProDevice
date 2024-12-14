@@ -87,42 +87,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const renderBlocks = (productos) => {
   const blocksContainer = document.getElementById("product-blocks");
-  blocksContainer.innerHTML = ""; // Limpiar el contenedor
+  blocksContainer.innerHTML = "";
 
   productos.forEach((producto, index) => {
     const productBlock = document.createElement("div");
-    productBlock.classList.add("product-block");
+    productBlock.classList.add("product-block", "card", "mb-4");
 
-    // Celda de imagen (carrusel de imágenes)
+    // Carrusel de imágenes
     const imageCell = document.createElement("div");
     const carouselDiv = document.createElement("div");
     carouselDiv.classList.add("carousel", "slide", "carousel-fade");
-    carouselDiv.setAttribute("data-bs-ride", "carousel");
-    carouselDiv.id = `carousel-${index}`; // Asignar un ID único
+    carouselDiv.setAttribute("id", `carousel-${index}`);
+    carouselDiv.setAttribute("data-bs-ride", "carousel"); // Activar el desplazamiento automático
 
     const carouselInner = document.createElement("div");
     carouselInner.classList.add("carousel-inner");
 
-    // Agregar las imágenes al carrusel
-    producto.imagenes.forEach((img, idx) => {
+    // Crear las imágenes en el carrusel
+    producto.imagenes.forEach((img, imgIndex) => {
       const item = document.createElement("div");
-      item.classList.add("carousel-item", idx === 0 ? "active" : "");
+      item.classList.add("carousel-item");
+      if (imgIndex === 0) item.classList.add("active");
+
       const imgElement = document.createElement("img");
       imgElement.src = img;
+      imgElement.alt = producto.nombre;
       imgElement.classList.add("d-block", "w-100");
-      imgElement.alt = `Imagen ${idx + 1}`;
       item.appendChild(imgElement);
       carouselInner.appendChild(item);
     });
 
     carouselDiv.appendChild(carouselInner);
 
-    // Botones de control del carrusel
+    // Controles de navegación del carrusel
     const prevControl = document.createElement("button");
     prevControl.classList.add("carousel-control-prev");
     prevControl.setAttribute("type", "button");
     prevControl.setAttribute("data-bs-target", `#carousel-${index}`);
     prevControl.setAttribute("data-bs-slide", "prev");
+
     const prevIcon = document.createElement("span");
     prevIcon.classList.add("carousel-control-prev-icon");
     prevIcon.setAttribute("aria-hidden", "true");
@@ -133,6 +136,7 @@ const renderBlocks = (productos) => {
     nextControl.setAttribute("type", "button");
     nextControl.setAttribute("data-bs-target", `#carousel-${index}`);
     nextControl.setAttribute("data-bs-slide", "next");
+
     const nextIcon = document.createElement("span");
     nextIcon.classList.add("carousel-control-next-icon");
     nextIcon.setAttribute("aria-hidden", "true");
@@ -140,38 +144,37 @@ const renderBlocks = (productos) => {
 
     carouselDiv.appendChild(prevControl);
     carouselDiv.appendChild(nextControl);
-
-    // Agregar el carrusel al contenedor de la celda de imágenes
     imageCell.appendChild(carouselDiv);
 
-    // Detalles del producto (nombre, especificaciones, etc.)
+    // Detalles del producto
     const detailsCell = document.createElement("div");
-    detailsCell.classList.add("product-details");
+    detailsCell.classList.add("product-details", "card-body");
 
-    const productName = document.createElement("h3");
+    const productName = document.createElement("h5");
+    productName.classList.add("card-title");
     productName.innerHTML = producto.nombre;
     detailsCell.appendChild(productName);
 
     const productSpecs = document.createElement("p");
+    productSpecs.classList.add("card-text");
     productSpecs.innerHTML = producto.especificaciones;
     detailsCell.appendChild(productSpecs);
 
     const productStatus = document.createElement("p");
+    productStatus.classList.add("card-text");
     productStatus.textContent = `Estado: ${producto.estado}`;
     detailsCell.appendChild(productStatus);
 
     const productPrice = document.createElement("p");
+    productPrice.classList.add("card-text");
     productPrice.textContent = `Precio: ${producto.precio}`;
     detailsCell.appendChild(productPrice);
 
-    // Agregar la celda de imágenes y la celda de detalles al bloque del producto
     productBlock.appendChild(imageCell);
     productBlock.appendChild(detailsCell);
 
-    // Finalmente, agregar el bloque del producto al contenedor
     blocksContainer.appendChild(productBlock);
   });
 };
 
-// Llamar la función para renderizar los productos
 renderBlocks(productos);
