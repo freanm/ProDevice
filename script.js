@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
                          - RAM: 8GB DDR4<br>
                          - Almacenamiento: 512GB SSD<br>
                          - Pantalla: 15.6" FHD<br>
-                         - Sistema Operativo: Windows 11
-                         - Bateria: 3 células, 41 Wh
+                         - Sistema Operativo: Windows 11<br>
+                         - Bateria: 3 células, 41 Wh<br>
                          - Video: Intel Iris XE Graphics`,
       precio: "$530.000",
       estado: "Nuevo",
