@@ -19,7 +19,7 @@
       margin: 0;
       padding: 0;
       background-color: #f5f5f5;
-      overflow-x: hidden; /* Evita el desbordamiento horizontal */
+      overflow-x: hidden;
     }
 
     /* Header styling */
@@ -28,7 +28,7 @@
       color: #fff;
       padding: 1rem;
       text-align: center;
-      font-size: 1.5rem; /* Tamaño de texto más grande para el encabezado */
+      font-size: 1.5rem;
     }
 
     /* Estilo de los bloques de productos */
@@ -40,6 +40,8 @@
       background-color: #fff;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
+      flex-direction: row;
+      justify-content: space-between;
     }
 
     .product-block img {
@@ -73,7 +75,7 @@
     .carousel-item img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Mantiene las imágenes cubriendo completamente el área */
+      object-fit: cover;
     }
 
     .carousel-control-prev, .carousel-control-next {
@@ -101,11 +103,42 @@
     .carousel-control-prev-icon, .carousel-control-next-icon {
       background-color: rgba(0, 0, 0, 0.2);
     }
+
+    /* Responsividad para dispositivos móviles */
+    @media (max-width: 768px) {
+      .product-block {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+      }
+
+      .product-details {
+        padding-left: 0;
+        text-align: center;
+        padding-top: 1rem;
+      }
+
+      .product-block img {
+        width: 100%;
+      }
+    }
+
+    /* Estilo de filtros */
+    .filters {
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .filters select {
+      width: 100%;
+    }
   </style>
 </head>
 <body>
   <header class="bg-dark text-white py-4 text-center">
-    <h1 class="mb-3" style="font-size: 2.5rem;">¡Bienvenido a <span style="color: #ffcc00;">ProDevice</span>!</h1>
+    <h1 class="mb-3" style="font-size: 2.5rem;">¡Bienvenidoss a <span style="color: #ffcc00;">ProDevice</span>!</h1>
     <p style="font-size: 1.2rem;">Los mejores dispositivos y accesorios al alcance de tu mano</p>
     <p class="mt-2" style="font-size: 1rem;">
         <strong>¿Necesitas ayuda?</strong> Llámanos o escríbenos por WhatsApp: 
